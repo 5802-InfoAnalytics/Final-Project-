@@ -1,0 +1,8 @@
+setwd("C:/Users/pietr/Desktop")
+library(readr)
+Miami_Dade_csv <- read_csv("Data/Miami Dade.csv.csv")
+View(Miami_Dade_csv)
+df <- Miami_Dade_csv
+Miami_Dade <- df[1:50, ]
+str(Miami_Dade)
+write.csv(Miami_Dade, file = "Miami Dataset 50.csv")
