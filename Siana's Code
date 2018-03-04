@@ -1,8 +1,27 @@
+                                                          Examining 311 Data
+##########################################################################################################################################
 setwd("C:/Users/pietr/Desktop")
 library(readr)
+
 Miami_Dade_csv <- read_csv("Data/Miami Dade.csv.csv")
 View(Miami_Dade_csv)
 df <- Miami_Dade_csv
-Miami_Dade <- df[1:50, ]
-str(Miami_Dade)
+df
+
+# Create a random sample of the data. 
+library("dplyr", lib.loc="~/R/win-library/3.4")
+Miami_Dade <- sample_n(df, size = 50, replace = FALSE)
+Miami_Dade
 write.csv(Miami_Dade, file = "Miami Dataset 50.csv")
+
+# In progress function for subsetting set of any number, printing the new set, and saving it to a table. See example example
+Of50 <- function(data_set, number){new <- (sample_n(data_set, size = number, replace = FALSE))}
+miami <- Of50(df, 50)
+print(miami)
+
+
+########################################################
+##### Cleaning the data ################################
+########################################################
+
+attributes(Miami_Dade)
