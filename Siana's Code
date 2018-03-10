@@ -29,7 +29,15 @@ attributes(Miami_Dade)
 ########################
 ### Data Exploration ###
 ########################
+
+# Make a correlation plot
 MD50 <- Miami_Dataset_50
 MD50.num<- sapply(MD50, is.numeric)
 MD50.cor <- cor(MD50[ , MD50.num])
 corrplot(MD50.cor, method = "color")
+
+# Train a Linear Model
+miami.model <- lm(`Goal Days` ~ X1 + `Zip / Postal Code`, data= MD50)
+summary(miami.model)
+#Plot using the model: 
+plot(miami.model)
