@@ -25,3 +25,11 @@ print(miami)
 ########################################################
 
 attributes(Miami_Dade)
+
+########################
+### Data Exploration ###
+########################
+MD50 <- Miami_Dataset_50
+MD50.num<- sapply(MD50, is.numeric)
+MD50.cor <- cor(MD50[ , MD50.num])
+corrplot(MD50.cor, method = "color")
