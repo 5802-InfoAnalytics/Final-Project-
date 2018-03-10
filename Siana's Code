@@ -36,6 +36,13 @@ MD50.num<- sapply(MD50, is.numeric)
 MD50.cor <- cor(MD50[ , MD50.num])
 corrplot(MD50.cor, method = "color")
 
+# Personalized function for the corellelagram/ correlation plot:
+correlation.plot<- function(MD50){
+  num <- sapply(MD50, is.numeric)
+  cor <- cor(MD50[ , num])
+  print(corrplot(cor, method = "color"))
+}
+
 # Train a Linear Model
 miami.model <- lm(`Goal Days` ~ X1 + `Zip / Postal Code`, data= MD50)
 summary(miami.model)
