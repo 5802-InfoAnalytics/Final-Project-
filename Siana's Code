@@ -52,14 +52,14 @@ plot(miami.model)
 
 
 
-
-
-MDF<- function(dataset, newname){
+# In progress function 
+#MDF<- function(dataset, newname){
   attach(dataset)
   library(dplyr)
   newname<- dataset %>% select("Goal Days", "Actual Completed Days", "Issue Type", "Method Received", 
                               "Neighborhood / District / Ward / etc.")
   colnames(newname) <- c("goal.days", "actual.days", "issue.type", "method", "district")
   print(head(newname))
-  write.csv(newname, "newname.csv")
+  #write.csv(newname, "newname.csv", sep= ",")
+  #function(newname){write.csv(newname, "newname.csv")}
   }
