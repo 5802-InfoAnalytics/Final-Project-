@@ -56,7 +56,7 @@ plot(miami.model)
 
 MDF<- function(dataset, newname){
   attach(dataset)
-  library(dyplr)
+  library(dplyr)
   newname<- dataset %>% select("Goal Days", "Actual Completed Days", "Issue Type", "Method Received", 
                               "Neighborhood / District / Ward / etc.")
   colnames(newname) <- c("goal.days", "actual.days", "issue.type", "method", "district")
