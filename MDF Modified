@@ -149,3 +149,13 @@ TREE TRIMMING (RAAM)	District 6	PHONE	30	30
 STRAY DOG PICK UP - MD	District 3	PHONE	2	1
 ANIMAL CRUELTY INVESTIGATION	District 12	PHONE	14	5
 DEAD ANIMAL PICKUP MD	District 13	PHONE	4	1
+
+Code used:
+
+df <- X311_Service_Requests_Miami_County[1:150, ]
+head(df)
+str(df)
+
+MDF <- df[ ,c(2,10,21,22,23)]
+
+write.csv(MDF, file = "MDF_csv")
