@@ -48,3 +48,18 @@ miami.model <- lm(`Goal Days` ~ X1 + `Zip / Postal Code`, data= MD50)
 summary(miami.model)
 #Plot using the model: 
 plot(miami.model)
+
+
+
+
+
+
+MDF<- function(dataset, newname){
+  attach(dataset)
+  library(dyplr)
+  newname<- dataset %>% select("Goal Days", "Actual Completed Days", "Issue Type", "Method Received", 
+                              "Neighborhood / District / Ward / etc.")
+  colnames(newname) <- c("goal.days", "actual.days", "issue.type", "method", "district")
+  print(head(newname))
+  write.csv(newname, "newname.csv")
+  }
